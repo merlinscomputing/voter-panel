@@ -1,0 +1,339 @@
+To use the following commands, at the ]-O prompt on your 9600,8,N,1 terminal, type 'dorss', like this:
+
+        ]-O
+        ]-O dorss
+        RSS:
+
+The following commands can be executed at the RSS: prompt:
+
+Station ID
+GET BPN
+      This command returns the 48-bit station ID.
+      The number is displayed in hexidecimal.  The number is necessary
+      to obtain firmware upgrades for Flash capable Quantars.
+      Response: BPN = xxxxxxxxxxxx
+        The serial number is also required to order firmware upgrades.
+        See GET STN SN.
+
+Serial Number
+GET STN SN
+      This command requests the Station's Serial Number.
+      Response: STN SN = <station_serial_number>
+
+Firmware Versions
+GET FW_VER [SC.O | WL.O | BOOT.O | BOOT2.O ] (the *.O) is the letter "o" not Zero!
+      This command will retrieve the current firmware version and
+timestamp
+      of the specified object file.
+
+EXAMPLES: Paste these to the "host" then press "enter"
+
+GET FW_VER SC.O
+GET FW_VER WL.O
+GET FW_VER BOOT.O
+GET FW_VER BOOT2.O
+
+      Response: FW_VER = xxxx.xx.xxx TIMESTAMP = yyyy/mm/dd hh:nn
+       The timestamp is when the code was programmed ("flashed").
+       The format of the timestamp value is:
+                yyyy = year (range 0000 - 9999)
+                mm = month (range 01 - 12)
+                dd = day (range 01 - 31)
+                hh = hours (range 00 - 23)
+                nn = minute (range 00 - 59)
+      Introduced in Release: R09.00.00
+
+Firmware Version (Non-Flash Capable Quantars)
+GET FW_VER [ SC | WL | EX ]
+      This command returns the firmware version of the Station Control
+      board.  Format is "Xddd.dd.ddd", where "ddd.dd.ddd" represents
+      the "system", "major", and "minor" version numbers (SC, WL, and
+      EX should have the same system version to be compatible).
+      Response: FW_VER [ SC | WL | EX ] = Rnnn.nn.nnn
+      Introduced in Release: 1
+
+IP Address
+GET ADDR IP
+      This command retrieves the Station's IP Address located in the  EEPROM
+      Network partition.
+      Response: IP ADDR = xxx.xxx.xxx.xxx
+          where `x' is a numeric digit, range:0-9
+      Introduced in Release: R09.00.00
+
+Date
+SET DATE YYYY/MM/DD
+      This command sets the current date (as tracked by the operating
+      system) to the new date given.
+      Response: None
+
+Time
+SET TIME HH:MM[:SS]
+      This command sets the current time (as tracked by the operating
+      system) to the given value. Seconds are optional and defaulted to
+      zero.
+      Response: None
+
+Alarms
+ALARM CLEAR
+      This command requests that all alarms be cleared from the Alarm Log.
+      Response: None
+ALARM RD value
+      This command requests that the Station send the alarm log entry for
+      the specified alarm number, 'value'.
+      Responses:
+      ALARM = YYYY/MM/DD.HH:MM:SS YYYY/MM/DD.HH:MM:SS X SC daignostic_msg
+
+=========================================================================
+Metering and Front Panel information (Updated continously)
+
+To display metering and front panel information, the RSS: prompt must
+be exited.  To exit the RSS: prompt, type 'exit', like this:
+
+       RSS:
+       RSS: exit
+       ]-O
+
+Then, at the ]-O prompt, type 'dorap', like this:
+
+       RSS:
+       RSS: exit
+       ]-O dorap
+       RAP:
+
+Continously Updated Status Information
+FPM
+      This commands requests the Station to begin sending front panel
+      metering information.  This information is in the form of responses
+      shown below.
+      Responses: See below.
+
+      TIME = YYYY/MM/DD.HH:MM:SS
+            While in the Front Panel mode, the Station will send the date
+            and time to the RSS every 5 seconds to let the user know that
+            the Station is still operating and on line with the RSS.
+      CHN = n
+
+      5MHZ_NET = [ ON | OFF ]
+
+      AC_FAIL = [ ON | OFF ]
+
+      AC_ON = [ ON | OFF ]
+
+      SPKRVOL = n
+
+      CTRL_FAIL = [ ON | OFF ]
+
+      CTRL_ON =  [ ON | OFF ]
+
+      ACC_DIS = [ ON | OFF ]
+
+      INTCOM = [ ON | OFF ]
+
+      PA_FULL =  [ OFF | LOW | FULL ]
+
+      PA_FAIL = [ ON | OFF ]
+
+      PA_TEST = [ ON | OFF ]
+
+      RX1_FAIL = [ ON | OFF ]
+
+      RX1_ACTIVE = [ ON | OFF ]
+
+      RX_LOCK = [ ON | OFF ]
+
+      SQ = [ PL | CSQ | OFF ]
+
+      TX_LOCK = [ ON | OFF  | DISABLED ]
+
+      WL_FAIL = [ ON | OFF ]
+
+      WL_ON = [ ON | OFF ]
+
+The following "RPTR  ..." are IntelliRepeater status messages:
+
+      RPTR ACT MAST = [ YES | NO ]
+
+      RPTR BSI CHN = [ YES | NO ]
+
+      RPTR CONTROL_CHN CHN = [ YES | NO ]
+
+      RPTR DISPATCH CHN = [ YES | NO ]
+
+      RPTR DLAN1 STATUS = [ UP | DOWN ]
+            Indicates the current status of DLAN1.
+
+      RPTR RX FREQ = n
+            n is the Rx Frequency of the current Repeater in Hz.
+      RPTR TX FREQ = n
+            n is the Tx Frequency of the current Repeater in Hz.
+      RPTR MODE = [ FAILSOFT | VOICE | CONTROL | BOGUS* ]
+
+      RPTR CUR = n
+            n is the Repeater number of the current Repeater.
+      RPTR RX STATUS = [ NO_STATE | ENABLED | DISABLED  | MALFUNCTION |
+            DISABLE_DIAG | ENABLE_DIAG | BOGUS* ]
+
+      RPTR SITE STATUS = [ DISABLE | TEST | WIDE | LOCAL | FAILSOFT |
+            BOGUS* ]
+
+      RPTR TX STATUS = [ NO_STATE | ENABLED | DISABLED  | MALFUNCTION |
+            DISABLE_DIAG | ENABLE_DIAG | BOGUS* ]
+
+      RPTR WL STATUS = [ NO_STATE | ENABLED | DISABLED  | MALFUNCTION |
+            DISABLE_DIAG | ENABLE_DIAG | BOGUS* ]
+
+Digital Metering Information
+MTR WL_P1
+      This command is used to request all
+      Wireline parameters.
+
+      Responses:
+      WL_ID = TRN_nnnnnnn,4-WIRE (example)
+            Wireline ID.
+      WL_9PT6V = n.n
+            9.6 volt supply level.
+      WL_NEG_9PT6V = n.n
+            -9.6 volt supply level.
+
+MTR TX_PA_P1
+      This command is issued to request all Exciter/PA parameters.
+      Responses:
+      TX_PA_ID_A = n
+            Power Amplifier Identification Voltage A
+      TX_PA_ID_B = n
+            Power Amplifier Identification Voltage A
+      TX_V_OMNI = n
+            Intermediate Power Amplifier Control Voltage
+      TX_PA_TEMP = n
+            Power Amplifier Heat Sink Temperature
+      TX_IPA_VF = n
+            Intermediate Power Amplifier Forward Power Detected Voltage
+      TX_DPA_VF = n
+            Driver Power Amplifier Forward Power Detected Voltage
+      TX_FPA_VF = n
+            Final Power Amplifier Forward Power Detected Voltage
+      TX_VR = n
+            Transmitter Reflected Power Detected Voltage
+      TX_VF = n
+            Transmitter Forward Power Detected Voltage
+      TX_PCIC_VCTRL_DIV2 = n
+            Power Control Chip Control Voltage
+      TX_SL_LEVEL_SYNTH = n
+            Steering Line Voltage of the Synthesizer
+      TX_2PT1_REF_LEVEL = n
+            2.1 HMz Reference Frequency Level
+      TX_FPA_I2_A
+            DDM Module Two Side A Current
+      TX_FPA_I2_B
+            DDM Module Two Side B Current
+      TX_28V
+            28V PA Voltage.
+      TX_14PT2V
+            14.2V PA Voltage.
+      TX_10PT2V
+            10.2V Exciter Voltage.
+      TX_IPA_I
+            Intermediate PA Current.
+      TX_DPA_I
+            Driver PA Current.
+
+MTR RX_P1
+      This command is issued to request all Receiver parameters.
+      Responses:
+      RX_ID = n
+            Module ID that contains the frequency range in MHz and either
+            Fast Lock or Slow Lock.
+      RX_APLUS = n
+            Mail Power supply Voltage.
+      RX_10V = n
+            Regulated 10V Supply.
+      RX_5V = n
+            Analog 5V Supply.
+      RX_SL_LO1 = n
+            Steering Line Level of Oscillator 1.
+      RX_SL_LO2 = n
+            Steering Line Level of Oscillator 2.
+      RX_REF_LEVEL = n
+            2.1 MHz Reference Level.
+      RX_LO1_LOCK = n
+            Oscillator 1 Lock Indicator.
+
+MTR PS_P1
+      This command is issued to request all
+      Power Supply parameters.
+      Responses:
+      PS_28V = n
+            28V Power Supply.
+      PS_14V = n
+            14V Power Supply.
+      PS_5V = n
+            5V Power Supply.
+      PS_BAT_TEMP = n
+            Battery Temperature.
+      PS_HS_TEMP = n
+            Heatsink Temperature.
+      PS_BAT_CHR_VOLT = n
+            Battery Charger Voltage.
+
+Stopping Continously Updated Status Information
+STOP
+      This command is issued by the RSS to the station as a request to
+      stop sending unsolicited updates.
+
+
+<!-- Here's one that we in the field came across while working on a case with System Support -->
+
+at the RSS: enter "get addr all". 
+
+The stations should respond with: 
+IP ADDR = 145.1.XXX.XXX 
+ISV MSCT = 232.0.62.255 
+SC MSCT = 232.0.62.240 
+PHYS ADDR = 08003ec02XXX 
+SITE BRDCST = 08003ec02XXX 
+The Xs are site specific.  
+
+
+Handset:
+1 is NC
+2 is receive audio output through a 1 kohm resistor
+3 is mike PTT
+4 is mike audio input
+5 is chassis ground
+6 is signal ground
+
+
+To Get RSSI - 
+PC outputs:
+ dorss
+ GET DSP RSSI 1 1 SHORT
+
+for each GET Statement - station outputs:
+                                                                         
+ RSS:                                                                         
+ RSSI = 1 -128.7 -12.5                                                   
+ RSS: 
+                                                                        
+ RSS:                                                                         
+ RSSI = 1 -129.1 -12.9
+ RSS:
+
+
+for TX:
+ RC SET PTT XMIT
+ RC SET PTT OFF
+
+for Access Disable
+ FP ACC_DIS ON
+ FP ACC_DIS OFF
+
+for Channel change:
+ FP CHN 1
+
+Station reset:
+ PCTL -ECHO OFF
+ DORSS
+ RESET
+ EXIT
+
+

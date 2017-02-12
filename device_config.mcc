@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration device="PIC24FJ128GB202" mcc_version="v2.25.2">
+    <managers>
+        <manager generated="true" name="Pin Manager" reloadPin="manual">
+            <setting name="package" option="DIP28"/>
+            <setting name="sorting" option="true"/>
+            <resource customName="PTT" digital="true" direction="OUTPUT" function="RA3" ioc="0" module="GPIO" name="RA3" start="false" type="pin" wpu="false"/>
+            <resource customName="Input1" digital="true" direction="INPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
+            <resource customName="SDA2" digital="true" direction="BIDIRECTIONAL" function="SDA2" ioc="0" module="I2C2" name="RB2" start="false" type="pin" wpu="false"/>
+            <resource customName="SCL2" digital="true" direction="BIDIRECTIONAL" function="SCL2" ioc="0" module="I2C2" name="RB3" start="false" type="pin" wpu="false"/>
+            <resource customName="U3RX" digital="true" direction="INPUT" function="U3RX" ioc="0" module="UART3" name="RB4" start="false" type="pin" wpu="false"/>
+            <resource customName="MUTE" digital="true" direction="OUTPUT" function="RB5" ioc="0" module="GPIO" name="RB5" start="true" type="pin" wpu="false"/>
+            <resource customName="U1RX" digital="true" direction="INPUT" function="U1RX" ioc="0" module="UART1" name="RB7" start="false" type="pin" wpu="false"/>
+            <resource customName="U1TX" digital="true" direction="OUTPUT" function="U1TX" ioc="0" module="UART1" name="RB8" start="false" type="pin" wpu="false"/>
+            <resource customName="U3TX" digital="true" direction="OUTPUT" function="U3TX" ioc="0" module="UART3" name="RB9" start="false" type="pin" wpu="false"/>
+            <resource customName="U2TX" digital="true" direction="OUTPUT" function="U2TX" ioc="0" module="UART2" name="RB10" start="false" type="pin" wpu="false"/>
+            <resource customName="U2RX" digital="true" direction="INPUT" function="U2RX" ioc="0" module="UART2" name="RB11" start="false" type="pin" wpu="false"/>
+            <resource customName="TUNING" digital="true" direction="INPUT" function="RB13" ioc="0" module="GPIO" name="RB13" start="false" type="pin" wpu="false"/>
+            <resource customName="HeartbeatLED" digital="true" direction="OUTPUT" function="RB15" ioc="0" module="GPIO" name="RB15" start="false" type="pin" wpu="false"/>
+            <file checksum="302498327" modified="false" name="pin_manager.c" path="mcc_generated_files/pin_manager.c"/>
+            <file checksum="886013232" modified="false" name="pin_manager.h" path="mcc_generated_files/pin_manager.h"/>
+        </manager>
+        <manager generated="true" name="System" reloadPin="manual">
+            <initializer comment="" name="Initialize">
+                <setting name="DOZE" option="1:8" register="CLKDIV"/>
+                <setting name="DOZEN" option="disabled" register="CLKDIV"/>
+                <setting name="RCDIV" option="FRC/2" register="CLKDIV"/>
+                <setting name="CPDIV" option="1:1" register="CLKDIV"/>
+                <setting name="PLLEN" option="enabled" register="CLKDIV"/>
+                <setting name="ROI" option="disabled" register="CLKDIV"/>
+                <setting name="STSRC" option="SOSC" register="OSCTUN"/>
+                <setting name="STEN" option="disabled" register="OSCTUN"/>
+                <setting name="STORPOL" option="Interrupt when STOR is 1" register="OSCTUN"/>
+                <setting name="STOR" option="disabled" register="OSCTUN"/>
+                <setting name="STLOCK" option="disabled" register="OSCTUN"/>
+                <setting name="STLPOL" option="Interrupt when STLOCK is 1" register="OSCTUN"/>
+                <setting name="TUN" option="Center frequency" register="OSCTUN"/>
+                <setting name="STSIDL" option="disabled" register="OSCTUN"/>
+                <additionalSetting name="soscEnable" option="OSCCONbits.SOSCEN = 0;"/>
+            </initializer>
+            <setting name="IOL1WAY" option="ON"/>
+            <setting name="PLLDIV" option="PLL8X"/>
+            <setting name="I2C1SEL" option="DISABLE"/>
+            <setting name="DSWDTPS" option="DSWDTPS1F"/>
+            <setting name="DSSWEN" option="ON"/>
+            <setting name="DSWDTOSC" option="LPRC"/>
+            <setting name="DSBOREN" option="ON"/>
+            <setting name="DSWDTEN" option="ON"/>
+            <setting name="WPDIS" option="WPDIS"/>
+            <setting name="WPFP" option="WPFP127"/>
+            <setting name="WPEND" option="WPENDMEM"/>
+            <setting name="BOREN" option="ON"/>
+            <setting name="WPCFG" option="WPCFGDIS"/>
+            <setting name="SOSCSEL" option="OFF"/>
+            <setting name="WDTWIN" option="PS25_0"/>
+            <setting name="PLLSS" option="PLL_FRC"/>
+            <setting name="POSCMD" option="NONE"/>
+            <setting name="IESO" option="ON"/>
+            <setting name="FNOSC" option="FRCPLL"/>
+            <setting name="WDTCLK" option="LPRC"/>
+            <setting name="WDTCMX" option="WDTCLK"/>
+            <setting name="ALTCMPI" option="CxINC_RB"/>
+            <setting name="FCKSM" option="CSDCMD"/>
+            <setting name="ALTRB6" option="APPEND"/>
+            <setting name="OSCIOFCN" option="ON"/>
+            <setting name="WDTPS" option="PS32768"/>
+            <setting name="LPCFG" option="OFF"/>
+            <setting name="ICS" option="PGx3"/>
+            <setting name="FWPSA" option="PR128"/>
+            <setting name="WINDIS" option="OFF"/>
+            <setting name="GWRP" option="OFF"/>
+            <setting name="GCP" option="OFF"/>
+            <setting name="FWDTEN" option="OFF"/>
+            <setting name="JTAGEN" option="OFF"/>
+            <setting name="Primary Oscillator" option="8000000"/>
+            <setting name="Secondary Oscillator" option="31000"/>
+            <setting name="generateConfigBits" option="true"/>
+            <file checksum="802445969" modified="false" name="mcc.c" path="mcc_generated_files/mcc.c"/>
+            <file checksum="3341954737" modified="false" name="mcc.h" path="mcc_generated_files/mcc.h"/>
+        </manager>
+        <manager generated="true" name="Interrupt Manager" reloadPin="manual">
+            <resource name="TI" type="TMR1" value="6"/>
+            <resource name="URXI" type="UART1" value="1"/>
+            <resource name="UTXI" type="UART1" value="1"/>
+            <resource name="UERI" type="UART1" value="1"/>
+            <resource name="URXI" type="UART2" value="1"/>
+            <resource name="MICI" type="I2C2" value="1"/>
+            <resource name="UTXI" type="UART2" value="1"/>
+            <resource name="UERI" type="UART2" value="1"/>
+            <resource name="URXI" type="UART3" value="1"/>
+            <file checksum="837760944" modified="false" name="interrupt_manager.c" path="mcc_generated_files/interrupt_manager.c"/>
+            <file checksum="2782921194" modified="false" name="interrupt_manager.h" path="mcc_generated_files/interrupt_manager.h"/>
+            <interrupt module="TMR1" name="TI" priority="6"/>
+            <interrupt module="UART1" name="URXI" priority="1"/>
+            <interrupt module="UART1" name="UTXI" priority="1"/>
+            <interrupt module="UART1" name="UERI" priority="1"/>
+            <interrupt module="UART2" name="URXI" priority="1"/>
+            <interrupt module="I2C2" name="MICI" priority="1"/>
+            <interrupt module="UART2" name="UTXI" priority="1"/>
+            <interrupt module="UART2" name="UERI" priority="1"/>
+            <interrupt module="UART3" name="URXI" priority="1"/>
+        </manager>
+    </managers>
+    <modules>
+        <module generated="true" mode="UART" name="UART1" order="0" reloadPin="auto" type="uart_irda7816">
+            <initializer comment="" name="Initialize">
+                <setting name="RTSMD" option="enabled" register="U1MODE"/>
+                <setting name="URXINV" option="disabled" register="U1MODE"/>
+                <setting name="BRGH" option="enabled" register="U1MODE"/>
+                <setting name="UARTEN" option="enabled" register="U1MODE"/>
+                <setting name="STSEL" option="1" register="U1MODE"/>
+                <setting name="WAKE" option="disabled" register="U1MODE"/>
+                <setting name="LPBACK" option="disabled" register="U1MODE"/>
+                <setting name="PDSEL" option="8N" register="U1MODE"/>
+                <setting name="USIDL" option="disabled" register="U1MODE"/>
+                <setting name="ABAUD" option="disabled" register="U1MODE"/>
+                <setting name="IREN" option="disabled" register="U1MODE"/>
+                <setting name="UEN" option="TX_RX" register="U1MODE"/>
+                <setting name="UTXINV" option="disabled" register="U1STA"/>
+                <setting name="UTXEN" option="disabled" register="U1STA"/>
+                <setting name="URXISEL" option="RX_ONE_CHAR" register="U1STA"/>
+                <setting name="UTXISEL0" option="TX_ONE_CHAR" register="U1STA"/>
+                <setting name="ADDEN" option="disabled" register="U1STA"/>
+                <setting name="UTXBRK" option="COMPLETED" register="U1STA"/>
+                <setting name="OERR" option="NO_ERROR_cleared" register="U1STA"/>
+                <setting name="U1TXREG" option="disabled" register="U1TXREG"/>
+                <setting name="LAST" option="disabled" register="U1TXREG"/>
+                <setting name="U1RXREG" option="disabled" register="U1RXREG"/>
+                <setting name="U1BRG" option="416" register="U1BRG"/>
+                <setting name="ADMMASK" option="disabled" register="U1ADMD"/>
+                <setting name="ADMADDR" option="disabled" register="U1ADMD"/>
+                <setting name="TXRPT" option="Retransmits the error byte once" register="U1SCCON"/>
+                <setting name="SCEN" option="disabled" register="U1SCCON"/>
+                <setting name="T0PD" option="1 ETU" register="U1SCCON"/>
+                <setting name="PTRCL" option="T0" register="U1SCCON"/>
+                <setting name="CONV" option="Direct" register="U1SCCON"/>
+                <setting name="PARIE" option="disabled" register="U1SCINT"/>
+                <setting name="TXRPTIE" option="disabled" register="U1SCINT"/>
+                <setting name="TXRPTIF" option="disabled" register="U1SCINT"/>
+                <setting name="GTCIF" option="disabled" register="U1SCINT"/>
+                <setting name="RXRPTIE" option="disabled" register="U1SCINT"/>
+                <setting name="RXRPTIF" option="disabled" register="U1SCINT"/>
+                <setting name="GTCIE" option="disabled" register="U1SCINT"/>
+                <setting name="WTCIE" option="disabled" register="U1SCINT"/>
+                <setting name="WTCIF" option="disabled" register="U1SCINT"/>
+                <setting name="GTC" option="disabled" register="U1GTC"/>
+                <setting name="WTCL" option="disabled" register="U1WTCL"/>
+                <setting name="WTCH" option="disabled" register="U1WTCH"/>
+                <additionalSetting name="baudRateInput" option="9600"/>
+            </initializer>
+            <setting name="URXI" option="true"/>
+            <setting name="UTXI" option="true"/>
+            <setting name="UERI" option="true"/>
+            <setting name="rxBufSize" option="8"/>
+            <setting name="txBufSize" option="8"/>
+            <file checksum="1364421423" modified="false" name="uart1.c" path="mcc_generated_files/uart1.c"/>
+            <file checksum="4110933584" modified="false" name="uart1.h" path="mcc_generated_files/uart1.h"/>
+        </module>
+        <module generated="true" mode="UART" name="UART2" order="1" reloadPin="auto" type="uart_irda7816">
+            <initializer comment="" name="Initialize">
+                <setting name="RTSMD" option="enabled" register="U2MODE"/>
+                <setting name="URXINV" option="disabled" register="U2MODE"/>
+                <setting name="BRGH" option="enabled" register="U2MODE"/>
+                <setting name="UARTEN" option="enabled" register="U2MODE"/>
+                <setting name="STSEL" option="1" register="U2MODE"/>
+                <setting name="WAKE" option="disabled" register="U2MODE"/>
+                <setting name="LPBACK" option="disabled" register="U2MODE"/>
+                <setting name="PDSEL" option="8N" register="U2MODE"/>
+                <setting name="USIDL" option="disabled" register="U2MODE"/>
+                <setting name="ABAUD" option="disabled" register="U2MODE"/>
+                <setting name="IREN" option="disabled" register="U2MODE"/>
+                <setting name="UEN" option="TX_RX" register="U2MODE"/>
+                <setting name="UTXINV" option="disabled" register="U2STA"/>
+                <setting name="UTXEN" option="disabled" register="U2STA"/>
+                <setting name="URXISEL" option="RX_ONE_CHAR" register="U2STA"/>
+                <setting name="UTXISEL0" option="TX_ONE_CHAR" register="U2STA"/>
+                <setting name="ADDEN" option="disabled" register="U2STA"/>
+                <setting name="UTXBRK" option="COMPLETED" register="U2STA"/>
+                <setting name="OERR" option="NO_ERROR_cleared" register="U2STA"/>
+                <setting name="U2TXREG" option="disabled" register="U2TXREG"/>
+                <setting name="LAST" option="disabled" register="U2TXREG"/>
+                <setting name="U2RXREG" option="disabled" register="U2RXREG"/>
+                <setting name="U2BRG" option="416" register="U2BRG"/>
+                <setting name="ADMMASK" option="disabled" register="U2ADMD"/>
+                <setting name="ADMADDR" option="disabled" register="U2ADMD"/>
+                <setting name="TXRPT" option="Retransmits the error byte once" register="U2SCCON"/>
+                <setting name="SCEN" option="disabled" register="U2SCCON"/>
+                <setting name="T0PD" option="1 ETU" register="U2SCCON"/>
+                <setting name="PTRCL" option="T0" register="U2SCCON"/>
+                <setting name="CONV" option="Direct" register="U2SCCON"/>
+                <setting name="PARIE" option="disabled" register="U2SCINT"/>
+                <setting name="TXRPTIE" option="disabled" register="U2SCINT"/>
+                <setting name="TXRPTIF" option="disabled" register="U2SCINT"/>
+                <setting name="GTCIF" option="disabled" register="U2SCINT"/>
+                <setting name="RXRPTIE" option="disabled" register="U2SCINT"/>
+                <setting name="RXRPTIF" option="disabled" register="U2SCINT"/>
+                <setting name="GTCIE" option="disabled" register="U2SCINT"/>
+                <setting name="WTCIE" option="disabled" register="U2SCINT"/>
+                <setting name="WTCIF" option="disabled" register="U2SCINT"/>
+                <setting name="GTC" option="disabled" register="U2GTC"/>
+                <setting name="WTCL" option="disabled" register="U2WTCL"/>
+                <setting name="WTCH" option="disabled" register="U2WTCH"/>
+                <additionalSetting name="baudRateInput" option="9600"/>
+            </initializer>
+            <setting name="URXI" option="true"/>
+            <setting name="UTXI" option="true"/>
+            <setting name="UERI" option="true"/>
+            <setting name="rxBufSize" option="8"/>
+            <setting name="txBufSize" option="8"/>
+            <file checksum="168680220" modified="true" name="uart2.c" path="mcc_generated_files/uart2.c"/>
+            <file checksum="3206012647" modified="false" name="uart2.h" path="mcc_generated_files/uart2.h"/>
+        </module>
+        <module generated="true" mode="GPIO" name="GPIO" order="2" reloadPin="manual" type="GPIO">
+            <resource customName="HeartbeatLED" digital="true" direction="OUTPUT" function="RB15" ioc="0" module="GPIO" name="RB15" start="false" type="pin" wpu="false"/>
+            <resource customName="Input1" digital="true" direction="INPUT" function="RA4" ioc="0" module="GPIO" name="RA4" start="false" type="pin" wpu="false"/>
+            <resource customName="TUNING" digital="true" direction="INPUT" function="RB13" ioc="0" module="GPIO" name="RB13" start="false" type="pin" wpu="false"/>
+            <resource customName="MUTE" digital="true" direction="OUTPUT" function="RB5" ioc="0" module="GPIO" name="RB5" start="true" type="pin" wpu="false"/>
+            <resource customName="PTT" digital="true" direction="OUTPUT" function="RA3" ioc="0" module="GPIO" name="RA3" start="false" type="pin" wpu="false"/>
+        </module>
+        <module generated="true" mode="UART" name="UART3" order="3" reloadPin="auto" type="uart_irda7816">
+            <initializer comment="" name="Initialize">
+                <setting name="RTSMD" option="enabled" register="U3MODE"/>
+                <setting name="URXINV" option="disabled" register="U3MODE"/>
+                <setting name="BRGH" option="enabled" register="U3MODE"/>
+                <setting name="UARTEN" option="enabled" register="U3MODE"/>
+                <setting name="STSEL" option="1" register="U3MODE"/>
+                <setting name="WAKE" option="disabled" register="U3MODE"/>
+                <setting name="LPBACK" option="disabled" register="U3MODE"/>
+                <setting name="PDSEL" option="8N" register="U3MODE"/>
+                <setting name="USIDL" option="disabled" register="U3MODE"/>
+                <setting name="ABAUD" option="disabled" register="U3MODE"/>
+                <setting name="IREN" option="disabled" register="U3MODE"/>
+                <setting name="UEN" option="TX_RX" register="U3MODE"/>
+                <setting name="UTXINV" option="disabled" register="U3STA"/>
+                <setting name="UTXEN" option="disabled" register="U3STA"/>
+                <setting name="URXISEL" option="RX_ONE_CHAR" register="U3STA"/>
+                <setting name="UTXISEL0" option="TX_ONE_CHAR" register="U3STA"/>
+                <setting name="ADDEN" option="disabled" register="U3STA"/>
+                <setting name="UTXBRK" option="COMPLETED" register="U3STA"/>
+                <setting name="OERR" option="NO_ERROR_cleared" register="U3STA"/>
+                <setting name="U3TXREG" option="disabled" register="U3TXREG"/>
+                <setting name="LAST" option="disabled" register="U3TXREG"/>
+                <setting name="U3RXREG" option="disabled" register="U3RXREG"/>
+                <setting name="U3BRG" option="6666" register="U3BRG"/>
+                <setting name="ADMMASK" option="disabled" register="U3ADMD"/>
+                <setting name="ADMADDR" option="disabled" register="U3ADMD"/>
+                <additionalSetting name="baudRateInput" option="600"/>
+            </initializer>
+            <setting name="URXI" option="true"/>
+            <setting name="UTXI" option="false"/>
+            <setting name="UERI" option="false"/>
+            <setting name="rxBufSize" option="24"/>
+            <setting name="txBufSize" option="24"/>
+            <file checksum="3715452468" modified="true" name="uart3.c" path="mcc_generated_files/uart3.c"/>
+            <file checksum="2177301620" modified="false" name="uart3.h" path="mcc_generated_files/uart3.h"/>
+        </module>
+        <module generated="true" mode="TMR" name="TMR1" order="4" reloadPin="auto" type="tmr_16b">
+            <initializer comment="" name="Initialize">
+                <setting name="TSIDL" option="disabled" register="T1CON"/>
+                <setting name="TGATE" option="disabled" register="T1CON"/>
+                <setting name="TCKPS" option="1:256" register="T1CON"/>
+                <setting name="TSYNC" option="disabled" register="T1CON"/>
+                <setting name="TCS" option="FOSC/2" register="T1CON"/>
+                <setting name="TECS" option="SOSC" register="T1CON"/>
+                <setting name="TON" option="enabled" register="T1CON"/>
+                <setting name="TMR1" option="0" register="TMR1"/>
+                <setting name="PR1" option="31250" register="PR1"/>
+                <additionalSetting name="timerFrequency" option="1.6E7"/>
+                <additionalSetting name="tmrReloadValue" option="0"/>
+                <additionalSetting name="tmrPeriod" option="500.000 ms"/>
+                <additionalSetting name="tickerPeriod" option="1"/>
+                <additionalSetting name="tmrPeriodValue" option="31250"/>
+                <additionalSetting name="tickerInSec" option="500.000 ms"/>
+            </initializer>
+            <setting name="TI" option="true"/>
+            <setting name="tmrUpperHalf" option="0"/>
+            <file checksum="686944874" modified="true" name="tmr1.c" path="mcc_generated_files/tmr1.c"/>
+            <file checksum="2648056562" modified="false" name="tmr1.h" path="mcc_generated_files/tmr1.h"/>
+        </module>
+        <module generated="true" mode="I2C Master" name="I2C2" order="5" reloadPin="auto" type="i2c_upb">
+            <initializer comment="" name="Initialize">
+                <setting name="I2CRXDATA" option="disabled" register="I2C2RCV"/>
+                <setting name="I2CTXDATA" option="disabled" register="I2C2TRN"/>
+                <setting name="I2CBRG" option="38" register="I2C2BRG"/>
+                <setting name="RCEN" option="disabled" register="I2C2CONL"/>
+                <setting name="A10M" option="7 Bit" register="I2C2CONL"/>
+                <setting name="RSEN" option="disabled" register="I2C2CONL"/>
+                <setting name="STRICT" option="disabled" register="I2C2CONL"/>
+                <setting name="ACKEN" option="disabled" register="I2C2CONL"/>
+                <setting name="DISSLW" option="enabled" register="I2C2CONL"/>
+                <setting name="SCLREL" option="Holds" register="I2C2CONL"/>
+                <setting name="SEN" option="disabled" register="I2C2CONL"/>
+                <setting name="ACKDT" option="Sends ACK" register="I2C2CONL"/>
+                <setting name="GCEN" option="disabled" register="I2C2CONL"/>
+                <setting name="SMEN" option="disabled" register="I2C2CONL"/>
+                <setting name="PEN" option="disabled" register="I2C2CONL"/>
+                <setting name="I2CEN" option="enabled" register="I2C2CONL"/>
+                <setting name="I2CSIDL" option="disabled" register="I2C2CONL"/>
+                <setting name="STREN" option="disabled" register="I2C2CONL"/>
+                <setting name="BOEN" option="disabled" register="I2C2CONH"/>
+                <setting name="AHEN" option="disabled" register="I2C2CONH"/>
+                <setting name="SBCDE" option="disabled" register="I2C2CONH"/>
+                <setting name="SDAHT" option="disabled" register="I2C2CONH"/>
+                <setting name="DHEN" option="disabled" register="I2C2CONH"/>
+                <setting name="PCIE" option="disabled" register="I2C2CONH"/>
+                <setting name="SCIE" option="disabled" register="I2C2CONH"/>
+                <setting name="IWCOL" option="disabled" register="I2C2STAT"/>
+                <setting name="P" option="disabled" register="I2C2STAT"/>
+                <setting name="S" option="disabled" register="I2C2STAT"/>
+                <setting name="I2COV" option="disabled" register="I2C2STAT"/>
+                <setting name="R_nW" option="disabled" register="I2C2STAT"/>
+                <setting name="BCL" option="disabled" register="I2C2STAT"/>
+                <setting name="D_nA" option="disabled" register="I2C2STAT"/>
+                <setting name="ADD" option="disabled" register="I2C2ADD"/>
+                <setting name="MSK" option="disabled" register="I2C2MSK"/>
+                <additionalSetting name="dividerChanged" option="0x26"/>
+                <additionalSetting name="clockFrequencyChanged" option="394088.7"/>
+            </initializer>
+            <file checksum="3523199055" modified="false" name="i2c2.c" path="mcc_generated_files/i2c2.c"/>
+            <file checksum="4134605954" modified="false" name="i2c2.h" path="mcc_generated_files/i2c2.h"/>
+        </module>
+    </modules>
+</configuration>
